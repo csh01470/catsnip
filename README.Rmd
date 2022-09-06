@@ -20,7 +20,7 @@ library(knitr)
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/catsnip)](https://cran.r-project.org/package=catsnip)
-
+[![R-CMD-check](https://github.com/csh01470/catsnip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/csh01470/catsnip/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview
@@ -47,7 +47,7 @@ library(knitr)
 
 `catsnip`은 CRAN에 등재되지 않았으므로, `install_github()` 함수를 통해 설치할 수 있습니다.
 
- `catboost` 버전은 <b>1.0.6</b> 버전입니다.
+2022년 9월 7일 `catboost` 버전은 <b>1.0.6</b> 버전입니다.
 
 ``` r
 remotes::install_github(repo="csh01470/catsnip")

@@ -9,12 +9,12 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/catsnip)](https://cran.r-project.org/package=catsnip)
-
+[![R-CMD-check](https://github.com/csh01470/catsnip/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/csh01470/catsnip/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview
 
-`catsnip`은 `catboost` 모델을 `tidymodels`의 `parsnip` 형식으로 지원하는
+`catsnip`은 `catboost` 모델을 `tidymodels`의 `parsnip` 형식으로 래핑한
 패키지입니다.
 
 해당 패키지는 `treesnip` 패키지를 기반으로 제작되었으며, 다음의 기능을
@@ -41,7 +41,7 @@ status](https://www.r-pkg.org/badges/version/catsnip)](https://cran.r-project.or
 `catsnip`은 CRAN에 등재되지 않았으므로, `install_github()` 함수를 통해
 설치할 수 있습니다.
 
-`catboost` 버전은 <b>1.0.6.</b> 버전입니다.
+2022년 9월 7일 `catboost` 버전은 <b>1.0.6</b> 버전입니다.
 
 ``` r
 remotes::install_github(repo="csh01470/catsnip")
