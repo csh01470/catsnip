@@ -1,0 +1,56 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# <b>catsnip</b> 🐈<a href='https://github.com/csh01470/catsnip'><img src='man/figures/logo.png' align="right" height="220" /></a>
+
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/catsnip)](https://cran.r-project.org/package=catsnip)
+
+<!-- badges: end -->
+
+## Overview
+
+`catsnip`은 `catboost` 모델을 `tidymodels`의 `parsnip` 형식으로 지원하는
+패키지입니다.
+
+해당 패키지는 `treesnip` 패키지를 기반으로 제작되었으며, 다음의 기능을
+제공합니다.
+
+-   `catboost` 모델을 `boost_tree()` 함수에 부착
+
+-   `install_catboost()` 함수를 통해 `catboost` 패키지 설치
+
+-   학습 모델의 스태킹 과정에서 `bonsai` 패키지와 `treesnip` 패키지의
+    충돌 방지
+
+## Documents
+
+`catboost` 모델과 `treesnip` 패키지에 대한 자세한 설명은 아래 링크를
+참고하세요.
+
+-   [Catboost](https://catboost.ai/docs/)
+
+-   [treesnip](https://curso-r.github.io/treesnip/)
+
+## Installation
+
+`catsnip`은 CRAN에 등재되지 않았으므로, `install_github()` 함수를 통해
+설치할 수 있습니다.
+
+`catboost` 버전은 <b>1.0.6.</b> 버전입니다.
+
+``` r
+remotes::install_github(repo="csh01470/catsnip")
+```
+
+## Roadmaps
+
+-   `GPU` 프로세싱 지원
+
+-   `catboost`모델과 `boost_tree()` 함수의 파라미터 최적화
+
+-   `fastshap` 패키지와 연동하여 SHAP value 추출 및 시각화
