@@ -2,10 +2,10 @@
 % Please edit documentation in R/add_boost_tree_catboost.R
 \name{add_boost_tree_catboost}
 \alias{add_boost_tree_catboost}
-\title{Wrapper to add \code{catboost} engine to the parsnip \code{boost_tree} model}
+\title{Wrapper to add \code{catboost} engine to the \code{parsnip} format}
 \usage{
 add_boost_tree_catboost()
 }
 \description{
-Catboost 패키지(엔진)를 boost_tree 모델에 부착한다.
+Attach the \code{catboost} package to \code{boost_tree()} Function.
 }

@@ -7,5 +7,5 @@
 install_catboost()
 }
 \description{
-Install \code{Catboost} Package
+Install \code{Catboost} Package By URL.
 }
