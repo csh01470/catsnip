@@ -4,3 +4,7 @@
     add_boost_tree_catboost()
   }
 }
+
+globalVariables(names=c(
+  "predict.catboost_Model", "catboost.load_pool", "catboost.predict"
+))

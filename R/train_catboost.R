@@ -1,5 +1,4 @@
 #' @title Boosted trees via catboost
-#'
 #' @description `catboost_train` is a wrapper for `catboost` tree-based models
 #'               where all of the model arguments are in the main function.
 #'
@@ -98,5 +97,5 @@ train_catboost <- function(
   )
 
   call <- parsnip::make_call(fun="catboost.train", ns="catboost", main_args)
-  rlang::eval_tidy(call, env=rlang::current_env())
+  rlang::eval_tidy(expr=call, env=rlang::current_env())
 }

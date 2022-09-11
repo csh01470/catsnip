@@ -14,5 +14,11 @@ prepare_df_catboost <- function(x, y = NULL, categorical_cols= NULL){
     return(x)
   }
 
-  catboost.load_pool(data = x, label = y, cat_features = categorical_cols)
+  main_args <- list(
+    data         = x,
+    label        = y,
+    cat_features = categorical_cols
+  )
+  call <- parsnip::make_call(fun="catboost.load_pool", ns="catboost", main_args)
+  rlang::eval_tidy(expr=call, env=rlang::current_env())
 }
