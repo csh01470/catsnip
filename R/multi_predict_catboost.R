@@ -1,5 +1,4 @@
 #' @title Model predictions across many sub-models
-#'
 #' @description For some models, predictions can be made on sub-models in the model object.
 #'
 #' @param object A model_fit object.

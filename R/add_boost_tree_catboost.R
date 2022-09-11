@@ -1,5 +1,5 @@
-#' Wrapper to add `catboost` engine to the parsnip `boost_tree` model
-#' @description Catboost 패키지(엔진)를 boost_tree 모델에 부착한다.
+#' @title Wrapper to add `catboost` engine to the `parsnip` format
+#' @description Attach the `catboost` package to `boost_tree()` Function.
 #'
 #' @usage add_boost_tree_catboost()
 #' @export

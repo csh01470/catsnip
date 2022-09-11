@@ -1,5 +1,5 @@
 #' @title Installation of Catboost Packages
-#' @description Install `Catboost` Package
+#' @description Install `Catboost` Package By URL.
 #'
 #' @export
 #' @importFrom devtools install_url
