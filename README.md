@@ -1,7 +1,5 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# <b>catsnip</b> 🐈<a href='https://github.com/csh01470/catsnip'><img src='man/figures/logo.png' align="right" height="220" /></a>
+# <b>catsnip</b> 🐈<a href="https://github.com/csh01470/catsnip"><img src="man/figures/logo.png" align="right" height="240"></a>
 
 <!-- badges: start -->
 
@@ -14,23 +12,22 @@ status](https://www.r-pkg.org/badges/version/catsnip)](https://cran.r-project.or
 
 ## Overview
 
-`catsnip`은 `catboost` 모델을 `tidymodels`의 `parsnip` 형식으로 래핑한
-패키지입니다.
+`catsnip` is a package that wraps `catboost` models in `parsnip` format.
 
-해당 패키지는 `treesnip` 패키지를 기반으로 제작되었으며, 다음의 기능을
-제공합니다.
+This package is based on `treesnip` package and provides following
+functions.
 
--   `catboost` 모델을 `boost_tree()` 함수에 부착
+-   Attach `catboost` model to `boost_tree()` function
 
--   `install_catboost()` 함수를 통해 `catboost` 패키지 설치
+-   Install `catboost` package through `install_catboost()` function
 
--   학습 모델의 스태킹 과정에서 `bonsai` 패키지와 `treesnip` 패키지의
-    충돌 방지
+-   Avoid conflict between `bonsai` package and `catsnip` package during
+    stacking model
 
 ## Documents
 
-`catboost` 모델과 `treesnip` 패키지에 대한 자세한 설명은 아래 링크를
-참고하세요.
+For a detailed explanation of `catboost` and `treesnip`, see links
+below.
 
 -   [Catboost](https://catboost.ai/docs/)
 
@@ -38,19 +35,31 @@ status](https://www.r-pkg.org/badges/version/catsnip)](https://cran.r-project.or
 
 ## Installation
 
-`catsnip`은 CRAN에 등재되지 않았으므로, `install_github()` 함수를 통해
-설치할 수 있습니다.
-
-2022년 9월 7일 `catboost` 버전은 <b>1.0.6</b> 버전입니다.
+Since `catsnip` is not listed on CRAN, so use `install_github()`
+function.
 
 ``` r
-remotes::install_github(repo="csh01470/catsnip")
+devtools::install_github(repo="csh01470/catsnip")
+```
+
+You can also install `catboost` released version with,
+
+``` r
+catsnip::install_catboost()
 ```
 
 ## Roadmaps
 
--   `GPU` 프로세싱 지원
+-   [ ] Support `GPU` processing
 
--   `catboost`모델과 `boost_tree()` 함수의 파라미터 최적화
+-   [ ] Optimization of parameters for `catboost` model and
+    `boost_tree()` function
 
--   `fastshap` 패키지와 연동하여 SHAP value 추출 및 시각화
+-   [ ] Extract SHAP value by interworking with `fastshap` package
+
+## Contributing
+
+No matter your current skills it’s possible to contribute to `catsnip`
+development.
+
+See the contributing guide for more information.

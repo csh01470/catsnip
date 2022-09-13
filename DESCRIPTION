@@ -1,40 +1,30 @@
 Package: catsnip
 Title: Treesnip-based Catboost Wrapper
 Description: Provides catboost engines for 'parsnip'.
-Version: 0.0.1
+Version: 0.0.2
 Author: 
   Daniel Falbel [aut, cre],
   Athos Damiani [aut],
   Roel M. Hogervorst [aut] (<https://orcid.org/0000-0001-7509-0328>)
 treesnip_URL: https://github.com/curso-r/treesnip
 Maintainer: 
-  Choe Sang Heon <csh01470@gmail.com>
+  Choi Sang Heon <csh01470@gmail.com>
 catsnip_URL: https://github.com/csh01470/catsnip
 Encoding: UTF-8
 License: GPL-3
 Roxygen: list(markdown=TRUE)
 Depends: 
   R (>= 3.5.0), 
-  parsnip (>= 0.1.4)
+  parsnip (>= 1.0.0)
 Suggests: 
-    testthat (>= 3.0.0),
-    tidymodels,
-    modeldata,
-    knitr,
-    rmarkdown,
-    readr,
-    glue,
-    scales,
+  tidymodels,
+  readr
 Imports: 
-    rlang,
-    purrr,
-    tibble,
-    dplyr,
-    devtools,
+  rlang,
+  purrr,
+  tibble,
+  dplyr,
+  devtools
 RoxygenNote: 7.2.1
-VignetteBuilder: knitr
 NeedsCompilation: no
 Packaged: 2022-09-05 03:07:40 UTC; CSH
-Config/testthat/edition: 3
-Remotes: 
-    https://github.com/catboost/catboost/releases/download/v1.0.6/catboost-R-Windows-1.0.6.tgz
