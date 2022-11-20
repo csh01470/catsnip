@@ -1,8 +1,8 @@
 #' @noRd
 catboost_by_tree <- function(tree, object, new_data, type, categorical_cols=NULL, ...){
   d <- prepare_df_catboost(new_data, categorical_cols=categorical_cols)
-  pred <- predict.catboost_Model(object$fit, d, ntree_end=tree, type=type,
-                                 categorical_col=categorical_cols, ...)
+  pred <- predict.catboost.Model(object$fit, d, ntree_end=tree, type=type,
+                                 categorical_cols=categorical_cols, ...)
   # switch based on prediction type
   if(object$spec$mode == "regression"){
     pred <- tibble::tibble(.pred = pred)
