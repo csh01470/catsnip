@@ -17,21 +17,21 @@ status](https://www.r-pkg.org/badges/version/catsnip)](https://cran.r-project.or
 This package is based on `treesnip` package and provides following
 functions.
 
--   Attach `catboost` model to `boost_tree()` function
+- Attach `catboost` model to `boost_tree()` function
 
--   Install `catboost` package through `install_catboost()` function
+- Install `catboost` package through `install_catboost()` function
 
--   Avoid conflict between `bonsai` package and `catsnip` package during
-    stacking model
+- Avoid conflict between `bonsai` package and `catsnip` package during
+  stacking model
 
 ## Documents
 
 For a detailed explanation of `catboost` and `treesnip`, see links
 below.
 
--   [Catboost](https://catboost.ai/docs/)
+- [Catboost](https://catboost.ai/docs/)
 
--   [treesnip](https://curso-r.github.io/treesnip/)
+- [treesnip](https://curso-r.github.io/treesnip/)
 
 ## Installation
 
@@ -45,17 +45,19 @@ devtools::install_github(repo="csh01470/catsnip")
 You can also install `catboost` released version with,
 
 ``` r
-catsnip::install_catboost()
+catsnip::install_catboost() 
 ```
+
+To install another version(ex: `0.16.5`), Use `version` parameter.
 
 ## Roadmaps
 
--   [ ] Support `GPU` processing
+- [ ] Support `GPU` processing
 
--   [ ] Optimization of parameters for `catboost` model and
-    `boost_tree()` function
+- [ ] Optimization of parameters for `catboost` model and `boost_tree()`
+  function
 
--   [ ] Extract SHAP value by interworking with `fastshap` package
+- [ ] Extract SHAP value by interworking with `fastshap` package
 
 ## Contributing
 

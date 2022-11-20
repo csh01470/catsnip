@@ -1,11 +1,11 @@
 #' @title Installation of Catboost Packages
 #' @description Install `Catboost` Package By URL.
 #'
+#' @param version catboost version that you want to install.
 #' @export
 #' @importFrom devtools install_url
 #' @importFrom utils installed.packages
-install_catboost <- function(){
-  version <- "1.1.1"
+install_catboost <- function(version="1.1.1"){
   if(identical(x=tolower(x=Sys.info()[["sysname"]]), y="darwin")){
     USER_OS <- "mac"
   }else if(identical(x=.Platform$OS.type, y="windows")){

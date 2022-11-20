@@ -4,7 +4,10 @@
 \alias{install_catboost}
 \title{Installation of Catboost Packages}
 \usage{
-install_catboost()
+install_catboost(version = "1.1.1")
+}
+\arguments{
+\item{version}{catboost version that you want to install.}
 }
 \description{
 Install \code{Catboost} Package By URL.

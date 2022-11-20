@@ -52,8 +52,10 @@ devtools::install_github(repo="csh01470/catsnip")
 You can also install `catboost` released version with,
 
 ``` r
-catsnip::install_catboost()
+catsnip::install_catboost() 
 ```
+
+To install another version(ex: `0.16.5`), Use `version` parameter.
 
 ## Roadmaps 
 
