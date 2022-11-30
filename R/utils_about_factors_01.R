@@ -9,5 +9,5 @@ categorical_columns <- function(x){
       categorical_cols <- c(categorical_cols, i)
     }
   }
-  categorical_cols
+  return(categorical_cols)
 }

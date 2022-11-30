@@ -24,10 +24,10 @@ multi_predict._catboost.Model <- function(object, new_data, type=NULL, trees=NUL
   if(is.null(type)){
     if(object$spec$mode == "classification"){
       type <- "Class"
-    } else{
+    }else{
       type <- "RawFormulaVal"
     }
-  } else{
+  }else{
     type <- switch(
       type,
       "raw"     = "RawFormulaVal",

@@ -4,29 +4,28 @@
 #' @usage add_boost_tree_catboost()
 #' @export
 add_boost_tree_catboost <- function(){
-
   parsnip::set_model_engine(model="boost_tree", mode="regression", eng="catboost")
   parsnip::set_model_engine(model="boost_tree", mode="classification", eng="catboost")
   parsnip::set_dependency(model="boost_tree", eng="catboost", pkg="catboost")
-  parsnip::set_dependency(model="boost_tree", eng="catboost", pkg="catsnip") #PKG_NM
+  parsnip::set_dependency(model="boost_tree", eng="catboost", pkg="catsnip")
 
   parsnip::set_encoding(
     model   = "boost_tree",
     mode    = "regression",
     eng     = "catboost",
     options = list(predictor_indicators = "none",
-                   compute_intercept = FALSE,
-                   remove_intercept = FALSE,
-                   allow_sparse_x = FALSE)
+                   compute_intercept    = FALSE,
+                   remove_intercept     = FALSE,
+                   allow_sparse_x       = FALSE)
   )
   parsnip::set_encoding(
     model   = "boost_tree",
     mode    = "classification",
     eng     = "catboost",
     options = list(predictor_indicators = "none",
-                   compute_intercept = FALSE,
-                   remove_intercept = FALSE,
-                   allow_sparse_x = FALSE)
+                   compute_intercept    = FALSE,
+                   remove_intercept     = FALSE,
+                   allow_sparse_x       = FALSE)
   )
 
   parsnip::set_fit(
@@ -35,7 +34,7 @@ add_boost_tree_catboost <- function(){
     mode  = "regression",
     value = list(interface = "data.frame",
                  protect   = c("x", "y"),
-                 func      = c(pkg="catsnip", fun="train_catboost"), #PKG_NM
+                 func      = c(pkg="catsnip", fun="train_catboost"),
                  defaults  = list())
   )
   parsnip::set_fit(
@@ -44,7 +43,7 @@ add_boost_tree_catboost <- function(){
     mode  = "classification",
     value = list(interface = "data.frame",
                  protect   = c("x", "y"),
-                 func      = c(pkg="catsnip", fun="train_catboost"), #PKG_NM
+                 func      = c(pkg="catsnip", fun="train_catboost"),
                  defaults  = list())
   )
 
@@ -53,7 +52,7 @@ add_boost_tree_catboost <- function(){
     eng   = "catboost",
     mode  = "regression",
     type  = "numeric",
-    value = list(pre = NULL,
+    value = list(pre  = NULL,
                  post = NULL,
                  func = c(fun = "predict"),
                  args = list(object = quote(object$fit), new_data=quote(new_data)))
@@ -63,27 +62,26 @@ add_boost_tree_catboost <- function(){
     eng   = "catboost",
     mode  = "regression",
     type  = "raw",
-    value = list(pre = NULL,
+    value = list(pre  = NULL,
                  post = NULL,
                  func = c(fun = "predict"),
                  args = list(object = quote(object$fit), new_data=quote(new_data)))
   )
-
   parsnip::set_pred(
     model = "boost_tree",
     eng   = "catboost",
     mode  = "classification",
     type  = "class",
-    value = list(pre = NULL,
+    value = list(pre  = NULL,
                  func = c(pkg = NULL, fun="predict"),
                  args = list(object=quote(object$fit), new_data=quote(new_data)),
                  post = function(x, object){
-                   if (is.vector(x)) {
-                     x <- ifelse(x >= 0.5, object$lvl[2], object$lvl[1])
-                   } else {
+                   if(is.vector(x)){
+                     x <- ifelse(x>= 0.5, object$lvl[2], object$lvl[1])
+                   }else{
                      x <- object$lvl[apply(x, 1, which.max)]
                    }
-                   x
+                   return(x)
                  })
   )
   parsnip::set_pred(
@@ -97,11 +95,11 @@ add_boost_tree_catboost <- function(){
                  post = function(x, object){
                    if(is.vector(x)){
                      x <- tibble::tibble(v1=(1-x),v2 = x)
-                   } else{
+                   }else{
                      x <- tibble::as_tibble(x, .name_repair=make.names)
                    }
                    colnames(x) <- object$lvl
-                   x
+                   return(x)
                  })
   )
   parsnip::set_pred(

@@ -1,5 +1,5 @@
 #' @noRd
-prepare_df_catboost <- function(x, y = NULL, categorical_cols= NULL){
+prepare_df_catboost <- function(x, y=NULL, categorical_cols=NULL){
   # auto detect the categorical columns from data.frame
   # Not strictly necessary but good form.
   if(is.null(categorical_cols)){
@@ -19,6 +19,6 @@ prepare_df_catboost <- function(x, y = NULL, categorical_cols= NULL){
     label        = y,
     cat_features = categorical_cols
   )
-  call <- parsnip::make_call(fun="catboost.load_pool", ns="catboost", main_args)
+  call <- parsnip::make_call(fun="catboost.load_pool", ns="catboost", args=main_args)
   rlang::eval_tidy(expr=call, env=rlang::current_env())
 }

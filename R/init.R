@@ -5,6 +5,4 @@
   }
 }
 
-globalVariables(names=c(
-  "predict.catboost_Model", "catboost.load_pool", "catboost.predict"
-))
+globalVariables(names=c("predict.catboost.Model", "catboost.load_pool", "catboost.predict"))

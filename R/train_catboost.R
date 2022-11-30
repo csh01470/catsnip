@@ -16,11 +16,8 @@
 #' @return A fitted `catboost.Model` object.
 #' @keywords internal
 #' @export
-train_catboost <- function(
-    x, y, depth=6, iterations=1000, learning_rate=NULL, rsm=1,
-    min_data_in_leaf=1, subsample=1, categorical_cols=NULL, ...
-){
-
+train_catboost <- function(x, y, depth=6, iterations=1000, learning_rate=NULL, rsm=1, min_data_in_leaf=1,
+                           subsample=1, categorical_cols=NULL, ...){
   others <- list(...)
 
   # learning rate --------------------
@@ -29,13 +26,12 @@ train_catboost <- function(
   # rsm ------------------------------
   if(!is.null(rsm)){
     rsm <- rsm/ncol(x)
-  }
-  if(rsm>1){
+  }else if(rsm>1){
     rsm <- 1
   }
 
   # subsample -----------------------
-  if(subsample > 1){
+  if(subsample>1){
     subsample <- 1
   }
 
@@ -52,15 +48,15 @@ train_catboost <- function(
   # objective accepted as an alias for loss_function
   names(others)[names(others) %in% "objective"] <- "loss_function"
 
-  if(!any(names(others) %in% c("loss_function"))){
+  if(!any(names(others)%in%c("loss_function"))){
     if(is.numeric(y)){
       arg_list$loss_function <- "RMSE"
-    } else{
+    }else{
       lvl <- levels(y)
       y <- as.numeric(y) - 1
-      if(length(lvl) == 2){
+      if(length(lvl)==2){
         arg_list$loss_function <- "Logloss"
-      } else{
+      }else{
         arg_list$loss_function <- "MultiClass"
       }
     }
