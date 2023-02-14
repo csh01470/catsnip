@@ -1,0 +1,13 @@
+#Files
+.Rhistory
+.RData
+.RDataTmp
+.Ruserdata
+.DS_Store
+*.Rproj
+*.pptx
+*.html
+
+#Directory
+.Rproj.user/
+css/
