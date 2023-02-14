@@ -1,4 +1,5 @@
 #' @noRd
+#' @export
 predict.catboost.Model <- function(object, new_data, type="RawFormulaVal", categorical_col_idx=NULL, ...){
   if(!inherits(x=new_data, what="catboost.Pool")){
     new_data <- prepare_df_catboost(x=new_data, y=NULL, categorical_col_idx=categorical_col_idx)
