@@ -11,6 +11,7 @@
 #' @param min_data_in_leaf A numeric value for the minimum sum of instances needed
 #'  in a child to continue to split.
 #' @param subsample Subsampling proportion of rows.
+#' @param early_stopping_rounds overfitting detector type to Iter and stops the training.
 #' @param categorical_col_idx indices of categorical columns, when NULL (default) factor columns are automatically detected
 #' @param ... Other options to pass to `catboost.train`.
 #'
@@ -18,8 +19,8 @@
 #'
 #' @export
 train_catboost <- function(x, y, depth=6, iterations=1000, learning_rate=NULL, rsm=1,
-                           min_data_in_leaf=1, subsample=1, categorical_col_idx=NULL,
-                           ...){
+                           min_data_in_leaf=1, subsample=1, early_stopping_rounds=NULL,
+                           categorical_col_idx=NULL, ...){
 
   others <- list(...)
   d <- prepare_df_catboost(x=x, y=y, categorical_col_idx=categorical_col_idx)
@@ -42,18 +43,16 @@ train_catboost <- function(x, y, depth=6, iterations=1000, learning_rate=NULL, r
   }
 
   arg_list <- list(
-    iterations       = iterations,
-    learning_rate    = learning_rate,
-    depth            = depth,
-    rsm              = rsm,
-    min_data_in_leaf = min_data_in_leaf,
-    subsample        = subsample
+    iterations            = iterations,
+    learning_rate         = learning_rate,
+    depth                 = depth,
+    rsm                   = rsm,
+    min_data_in_leaf      = min_data_in_leaf,
+    subsample             = subsample,
+    early_stopping_rounds = early_stopping_rounds
   )
 
-  # loss -------------------------
-  # objective accepted as an alias for loss_function
   names(x=others)[names(x=others)%in%c("objective")] <- "loss_function"
-
   if(!any(names(x=others)%in%c("loss_function"))){
     if(is.numeric(x=y)){
       arg_list[["loss_function"]] <- "RMSE"

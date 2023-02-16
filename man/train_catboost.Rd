@@ -13,6 +13,7 @@ train_catboost(
   rsm = 1,
   min_data_in_leaf = 1,
   subsample = 1,
+  early_stopping_rounds = NULL,
   categorical_col_idx = NULL,
   ...
 )
@@ -34,6 +35,8 @@ train_catboost(
 in a child to continue to split.}
 
 \item{subsample}{Subsampling proportion of rows.}
+
+\item{early_stopping_rounds}{overfitting detector type to Iter and stops the training.}
 
 \item{categorical_col_idx}{indices of categorical columns, when NULL (default) factor columns are automatically detected}
 
