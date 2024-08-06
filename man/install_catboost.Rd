@@ -4,7 +4,7 @@
 \alias{install_catboost}
 \title{Installation of Catboost Packages}
 \usage{
-install_catboost(version = "1.1.1")
+install_catboost(version = "1.2.5")
 }
 \arguments{
 \item{version}{catboost version that you want to install.}

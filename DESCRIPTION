@@ -1,7 +1,7 @@
 Package: catsnip
 Title: Treesnip-based Catboost Wrapper
 Description: Provides catboost engines for 'parsnip'.
-Version: 0.1.0
+Version: 0.1.1
 Author: 
   Daniel Falbel [aut, cre],
   Athos Damiani [aut],
@@ -24,6 +24,6 @@ Imports:
   tibble,
   dplyr,
   devtools
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 NeedsCompilation: no
 Packaged: 2022-09-05 03:07:40 UTC; CSH

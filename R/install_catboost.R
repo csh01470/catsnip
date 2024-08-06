@@ -6,7 +6,7 @@
 #' @importFrom devtools install_url
 #' @importFrom utils installed.packages
 #' @export
-install_catboost <- function(version="1.1.1"){
+install_catboost <- function(version="1.2.5"){
   if(identical(x=tolower(x=Sys.info()[["sysname"]]), y="darwin")){
     USER_OS <- "mac"
   }else if(identical(x=.Platform$OS.type, y="windows")){
